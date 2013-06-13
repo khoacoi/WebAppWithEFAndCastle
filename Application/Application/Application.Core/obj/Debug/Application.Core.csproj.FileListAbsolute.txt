@@ -16,3 +16,12 @@ D:\Working\MyWeb\GitHub\NewCode\Code\Application\Application\Application.Core\ob
 D:\Working\MyWeb\GitHub\NewCode\Code\Application\Application\Application.Core\obj\Debug\Application.Core.csproj.GenerateResource.Cache
 D:\Working\MyWeb\GitHub\NewCode\Code\Application\Application\Application.Core\obj\Debug\Application.Core.dll
 D:\Working\MyWeb\GitHub\NewCode\Code\Application\Application\Application.Core\obj\Debug\Application.Core.pdb
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\bin\Debug\Application.Core.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\bin\Debug\Application.Core.pdb
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\bin\Debug\Application.Common.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\bin\Debug\Application.Common.pdb
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\obj\Debug\Application.Core.csprojResolveAssemblyReference.cache
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\obj\Debug\Application.Core.Resources.Messages.resources
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\obj\Debug\Application.Core.csproj.GenerateResource.Cache
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\obj\Debug\Application.Core.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Core\obj\Debug\Application.Core.pdb
