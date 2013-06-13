@@ -73,7 +73,11 @@
 <button class="btn btn-small btn-success" data-bind='click: saveProfile'>Save Profile</button>
 <input class="btn btn-small btn-primary" type="button" value="Back To Profile List" data-bind="click:$root.backToProfileList" />
 
-<script src="~/Scripts/CreateEdit.js"></script>
+@section Scripts {
+    <script src="~/Scripts/Modules/CreateEdit.js"></script>
+}
+
+
 <style>
     .validationMessage {
         color: red;

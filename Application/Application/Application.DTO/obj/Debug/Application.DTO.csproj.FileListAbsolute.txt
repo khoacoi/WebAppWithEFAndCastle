@@ -8,3 +8,8 @@ D:\Working\MyWeb\GitHub\NewCode\Code\Application\Application\Application.DTO\bin
 D:\Working\MyWeb\GitHub\NewCode\Code\Application\Application\Application.DTO\obj\Debug\Application.DTO.csprojResolveAssemblyReference.cache
 D:\Working\MyWeb\GitHub\NewCode\Code\Application\Application\Application.DTO\obj\Debug\Application.DTO.dll
 D:\Working\MyWeb\GitHub\NewCode\Code\Application\Application\Application.DTO\obj\Debug\Application.DTO.pdb
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\bin\Debug\Application.DTO.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\bin\Debug\Application.DTO.pdb
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.pdb
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.csprojResolveAssemblyReference.cache

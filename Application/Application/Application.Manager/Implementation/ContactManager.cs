@@ -89,18 +89,16 @@ namespace Application.Manager.Implementation
                 throw new ArgumentException(Messages.warning_InvalidArgumentForFindProfiles);
 
             //recover profiles in paged fashion
-            var profiles = _profileRepository.GetPaged<DateTime>(pageIndex, pageCount, o => o.Created, false);
+            var profiles = _profileRepository.GetPaged<DateTime>(pageIndex, pageCount, o => o.Created, false).ToList();
             var addressTypes = _addressTypeRepository.GetAll().ToList();
             var phoneTypes = _phoneTypeRepository.GetAll().ToList();
 
-            if (profiles != null
-                &&
-                profiles.Any())
+            if (profiles != null && profiles.Any())
             {
                 List<ProfileDTO> lstProfileDTO = new List<ProfileDTO>();
                 foreach (var profile in profiles)
                 {
-                    lstProfileDTO.Add( Conversion.Mapping.ProfileToProfileDTO(profile, addressTypes, phoneTypes));
+                    lstProfileDTO.Add(Conversion.Mapping.ProfileToProfileDTO(profile, addressTypes, phoneTypes));
                 }
                 return lstProfileDTO;
             }

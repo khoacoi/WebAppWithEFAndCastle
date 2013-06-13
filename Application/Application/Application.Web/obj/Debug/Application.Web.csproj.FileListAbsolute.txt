@@ -232,3 +232,12 @@ D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Applicatio
 D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\obj\Debug\Application.Web.csprojResolveAssemblyReference.cache
 D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\obj\Debug\Application.Web.dll
 D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\obj\Debug\Application.Web.pdb
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Microsoft.AspNet.SignalR.Owin.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Owin.dll
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Microsoft.AspNet.SignalR.Owin.xml
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Web\bin\Microsoft.Owin.Host.SystemWeb.xml

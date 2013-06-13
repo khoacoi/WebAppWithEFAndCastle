@@ -61,10 +61,13 @@ namespace Application.Web.Controllers
         /// <param name="profileDTO"></param>
         /// <returns></returns>
         [System.Web.Http.HttpPost]
-        public HttpStatusCodeResult SaveProfileInformation(ProfileDTO profileDTO)
+        public ActionResult SaveProfileInformation(ProfileDTO profileDTO)
         {
             _contactManager.SaveProfileInformation(profileDTO);
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
+            return Json(new
+            {
+                IsSuccess = true
+            });
         }
 
         /// <summary>

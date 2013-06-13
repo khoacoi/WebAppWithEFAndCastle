@@ -5,11 +5,11 @@
     <title>@ViewBag.Title - Contact manager</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/knockout")
+
     @Styles.Render("~/Content/css")
+    @Html.Partial("Partials/_CssPartial")
     @Scripts.Render("~/bundles/modernizr")
-    @RenderSection("scripts", required: false)
+    @*@RenderSection("scripts", required: false)*@
 </head>
 <body>
 
@@ -34,5 +34,7 @@
         </div>
     </div>
 
+    @Html.Partial("Partials/_ScriptsPartial")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
