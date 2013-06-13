@@ -1,78 +1,4 @@
-USE [master]
-GO
-/****** Object:  Database [Application_DB]    Script Date: 01/07/2013 12:54:41 ******/
-CREATE DATABASE [Application_DB] ON  PRIMARY 
-( NAME = N'Profile', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\Application_DB.mdf' , SIZE = 2048KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
- LOG ON 
-( NAME = N'Profile_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\Application_DB.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
-GO
-ALTER DATABASE [Application_DB] SET COMPATIBILITY_LEVEL = 100
-GO
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [Application_DB].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-ALTER DATABASE [Application_DB] SET ANSI_NULL_DEFAULT OFF
-GO
-ALTER DATABASE [Application_DB] SET ANSI_NULLS OFF
-GO
-ALTER DATABASE [Application_DB] SET ANSI_PADDING OFF
-GO
-ALTER DATABASE [Application_DB] SET ANSI_WARNINGS OFF
-GO
-ALTER DATABASE [Application_DB] SET ARITHABORT OFF
-GO
-ALTER DATABASE [Application_DB] SET AUTO_CLOSE OFF
-GO
-ALTER DATABASE [Application_DB] SET AUTO_CREATE_STATISTICS ON
-GO
-ALTER DATABASE [Application_DB] SET AUTO_SHRINK OFF
-GO
-ALTER DATABASE [Application_DB] SET AUTO_UPDATE_STATISTICS ON
-GO
-ALTER DATABASE [Application_DB] SET CURSOR_CLOSE_ON_COMMIT OFF
-GO
-ALTER DATABASE [Application_DB] SET CURSOR_DEFAULT  GLOBAL
-GO
-ALTER DATABASE [Application_DB] SET CONCAT_NULL_YIELDS_NULL OFF
-GO
-ALTER DATABASE [Application_DB] SET NUMERIC_ROUNDABORT OFF
-GO
-ALTER DATABASE [Application_DB] SET QUOTED_IDENTIFIER OFF
-GO
-ALTER DATABASE [Application_DB] SET RECURSIVE_TRIGGERS OFF
-GO
-ALTER DATABASE [Application_DB] SET  DISABLE_BROKER
-GO
-ALTER DATABASE [Application_DB] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
-GO
-ALTER DATABASE [Application_DB] SET DATE_CORRELATION_OPTIMIZATION OFF
-GO
-ALTER DATABASE [Application_DB] SET TRUSTWORTHY OFF
-GO
-ALTER DATABASE [Application_DB] SET ALLOW_SNAPSHOT_ISOLATION OFF
-GO
-ALTER DATABASE [Application_DB] SET PARAMETERIZATION SIMPLE
-GO
-ALTER DATABASE [Application_DB] SET READ_COMMITTED_SNAPSHOT OFF
-GO
-ALTER DATABASE [Application_DB] SET HONOR_BROKER_PRIORITY OFF
-GO
-ALTER DATABASE [Application_DB] SET  READ_WRITE
-GO
-ALTER DATABASE [Application_DB] SET RECOVERY FULL
-GO
-ALTER DATABASE [Application_DB] SET  MULTI_USER
-GO
-ALTER DATABASE [Application_DB] SET PAGE_VERIFY CHECKSUM
-GO
-ALTER DATABASE [Application_DB] SET DB_CHAINING OFF
-GO
-EXEC sys.sp_db_vardecimal_storage_format N'Application_DB', N'ON'
-GO
-USE [Application_DB]
-GO
+
 /****** Object:  Table [dbo].[Profile]    Script Date: 01/07/2013 12:54:42 ******/
 SET ANSI_NULLS ON
 GO
@@ -304,8 +230,8 @@ GO
 
 /******Master Table Entry ******/
 
-INSERT INTO [Application_DB].[dbo].[AddressType] ([Name])VALUES ('Billing Address')
-INSERT INTO [Application_DB].[dbo].[AddressType] ([Name])VALUES ('Shipping Address')
+INSERT INTO [dbo].[AddressType] ([Name])VALUES ('Billing Address')
+INSERT INTO [dbo].[AddressType] ([Name])VALUES ('Shipping Address')
 
-INSERT INTO [Application_DB].[dbo].[PhoneType] ([Name]) VALUES ('Home Phone')
-INSERT INTO [Application_DB].[dbo].[PhoneType] ([Name]) VALUES ('Work Phone')
+INSERT INTO [dbo].[PhoneType] ([Name]) VALUES ('Home Phone')
+INSERT INTO [dbo].[PhoneType] ([Name]) VALUES ('Work Phone')

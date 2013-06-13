@@ -48,7 +48,7 @@ namespace Application.Web.Dependency
 
                         Component.For<IContactManager>().ImplementedBy<ContactManager>(),
 
-                        AllTypes.FromThisAssembly().BasedOn<IHttpController>().LifestyleTransient()
+                        Classes.FromThisAssembly().BasedOn<IHttpController>().LifestyleTransient()
 
                         )
                        .AddFacility<LoggingFacility>(f => f.UseLog4Net());
