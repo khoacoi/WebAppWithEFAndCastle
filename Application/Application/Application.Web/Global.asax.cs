@@ -1,5 +1,8 @@
-﻿using Application.DependencyResolver.DependencyInstallers;
+﻿using Application.Common.Bootstrapper;
+using Application.Common.Extensions;
+using Application.DependencyResolver.DependencyInstallers;
 using Application.DependencyResolver.Factory;
+using Application.Web.Startup.Tasks;
 using Castle.Windsor;
 using CommonServiceLocator.WindsorAdapter;
 using Microsoft.Practices.ServiceLocation;
@@ -37,17 +40,31 @@ namespace Application.Web
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            //AreaRegistration.RegisterAllAreas();
 
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-            AuthConfig.RegisterAuth();
-
+            //WebApiConfig.Register(GlobalConfiguration.Configuration);
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //AuthConfig.RegisterAuth();
+            InitializeAction(this.container);
             var controllerFactory = new WindsorControllerFactory(container.Kernel);
             ControllerBuilder.Current.SetControllerFactory(controllerFactory);
 
+        }
+
+        private void InitializeAction(IWindsorContainer container)
+        {
+            var tasks = new IBootstrapperTask[] {
+                new SignalRRegistrationTask(),
+                new RouteRegistrationTask(),
+                new AuthorizeRegistrationTask(),
+                new FilterRegistrationTask(),
+                new BundleRegistrationTask(),
+                new MvcOverridesRegistrationTask(),
+            };
+            tasks.Each(t => t.Execute());
+            //tasks.Each(t => t.Execute(container));
         }
     }
 }

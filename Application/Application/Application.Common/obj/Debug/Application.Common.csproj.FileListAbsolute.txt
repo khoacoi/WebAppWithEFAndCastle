@@ -58,3 +58,4 @@ D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Common\
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Common\obj\Debug\Application.Common.csproj.GenerateResource.Cache
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Common\obj\Debug\Application.Common.dll
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Common\obj\Debug\Application.Common.pdb
+D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Common\obj\Debug\Application.Common.csprojResolveAssemblyReference.cache

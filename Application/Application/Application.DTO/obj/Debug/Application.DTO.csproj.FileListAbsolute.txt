@@ -17,3 +17,4 @@ D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\bin
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\bin\Debug\Application.DTO.pdb
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.dll
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.pdb
+D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.csprojResolveAssemblyReference.cache

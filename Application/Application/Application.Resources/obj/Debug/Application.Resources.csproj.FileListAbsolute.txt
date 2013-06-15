@@ -5,3 +5,4 @@ D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Resourc
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Resources\obj\Debug\Application.Resources.pdb
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Resources\obj\Debug\Application.Resources.ApplicationErrors.resources
 D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Resources\obj\Debug\Application.Resources.ApplicationText.resources
+D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.Resources\obj\Debug\Application.Resources.csprojResolveAssemblyReference.cache
