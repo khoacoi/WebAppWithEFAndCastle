@@ -1,6 +1,6 @@
-﻿using Application.Core.ProfileModule.AddressAggregate;
-using Application.Core.ProfileModule.PhoneAggregate;
-using Application.Core.ProfileModule.ProfileAggregate;
+﻿using Application.Domain.ProfileModule.AddressAggregate;
+using Application.Domain.ProfileModule.PhoneAggregate;
+using Application.Domain.ProfileModule.ProfileAggregate;
 using Application.DTO;
 using Application.DTO.ProfileModule;
 using System;

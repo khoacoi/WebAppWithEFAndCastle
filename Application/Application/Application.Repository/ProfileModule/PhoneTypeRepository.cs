@@ -1,4 +1,4 @@
-﻿using Application.Core.ProfileModule.PhoneAggregate;
+﻿using Application.Domain.ProfileModule.PhoneAggregate;
 using Application.DAL;
 
 namespace Application.Repository.ProfileModule

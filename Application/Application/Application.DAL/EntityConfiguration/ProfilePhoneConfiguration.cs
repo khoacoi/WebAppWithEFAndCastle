@@ -1,4 +1,4 @@
-﻿using Application.Core.ProfileModule.ProfilePhoneAggregate;
+﻿using Application.Domain.ProfileModule.ProfilePhoneAggregate;
 using System.Data.Entity.ModelConfiguration;
 
 namespace Application.DAL.EntityConfiguration

@@ -25,11 +25,6 @@ namespace Application.Web.Controllers
             _contactManager = contactManager;
         }
 
-        public ContactController()
-        {
-
-        }
-
         #endregion Constructor
 
         #region Public Methods

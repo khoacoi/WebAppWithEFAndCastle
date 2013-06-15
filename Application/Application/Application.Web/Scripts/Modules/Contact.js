@@ -22,7 +22,7 @@
     self.removeProfile = function (profile) {
         if (confirm("Are you sure you want to delete this profile?")) {
             var id = profile.ProfileId;
-            waitingDialog({});
+            //waitingDialog({});
             $.ajax({
                 type: 'DELETE', url: 'Contact/DeleteProfile/' + id,
                 success: function () { self.Profiles.remove(profile); },

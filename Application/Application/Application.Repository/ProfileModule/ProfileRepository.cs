@@ -1,4 +1,4 @@
-﻿using Application.Core.ProfileModule.ProfileAggregate;
+﻿using Application.Domain.ProfileModule.ProfileAggregate;
 using Application.DAL;
 
 namespace Application.Repository.ProfileModule
@@ -11,8 +11,7 @@ namespace Application.Repository.ProfileModule
         /// Create a new instance
         /// </summary>
         /// <param name="unitOfWork">Associated unit of work</param>
-        public ProfileRepository(UnitOfWork unitOfWork)
-            : base(unitOfWork)
+        public ProfileRepository(UnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
 

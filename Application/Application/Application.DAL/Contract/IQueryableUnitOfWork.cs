@@ -1,4 +1,5 @@
-﻿using Application.Core;
+﻿using Application.Common;
+using Application.Domain;
 using System.Data.Entity;
 
 namespace Application.DAL.Contract
@@ -10,8 +11,7 @@ namespace Application.DAL.Contract
     /// This contract extend IUnitOfWork for use with EF code
     /// </remarks>
     /// </summary>
-    public interface IQueryableUnitOfWork
-        : IUnitOfWork, ISql
+    public interface IQueryableUnitOfWork : IUnitOfWork, ISql
     {
         /// <summary>
         /// Returns a IDbSet instance for access to entities of the given type in the context, 
@@ -19,21 +19,21 @@ namespace Application.DAL.Contract
         /// </summary>
         /// <typeparam name="TValueObject"></typeparam>
         /// <returns></returns>
-        DbSet<T> CreateSet<T>() where T : class;
+        DbSet<T> CreateSet<T>() where T : Entity;
 
         /// <summary>
         /// Attach this item into "ObjectStateManager"
         /// </summary>
         /// <typeparam name="TValueObject">The type of entity</typeparam>
         /// <param name="item">The item <</param>
-        void Attach<T>(T item) where T : class;
+        void Attach<T>(T item) where T : Entity;
 
         /// <summary>
         /// Set object as modified
         /// </summary>
         /// <typeparam name="TValueObject">The type of entity</typeparam>
         /// <param name="item">The entity item to set as modifed</param>
-        void SetModified<T>(T item) where T : class;
+        void SetModified<T>(T item) where T : Entity;
 
         /// <summary>
         /// Apply current values in <paramref name="original"/>
@@ -41,7 +41,7 @@ namespace Application.DAL.Contract
         /// <typeparam name="T">The type of entity</typeparam>
         /// <param name="original">The original entity</param>
         /// <param name="current">The current entity</param>
-        void ApplyCurrentValues<T>(T original, T current) where T : class;
+        void ApplyCurrentValues<T>(T original, T current) where T : Entity;
 
     }
 }

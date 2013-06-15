@@ -1,4 +1,4 @@
-﻿using Application.Core.ProfileModule.AddressAggregate;
+﻿using Application.Domain.ProfileModule.AddressAggregate;
 using Application.DAL;
 
 namespace Application.Repository.ProfileModule

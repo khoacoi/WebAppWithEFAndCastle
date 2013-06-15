@@ -13,3 +13,7 @@ D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Applicatio
 D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.dll
 D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.pdb
 D:\Working\MyWeb\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.csprojResolveAssemblyReference.cache
+D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\bin\Debug\Application.DTO.dll
+D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\bin\Debug\Application.DTO.pdb
+D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.dll
+D:\Work\GitHub\WebAppWithEFAndCastle\Application\Application\Application.DTO\obj\Debug\Application.DTO.pdb

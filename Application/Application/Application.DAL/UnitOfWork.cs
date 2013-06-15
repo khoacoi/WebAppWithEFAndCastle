@@ -1,8 +1,8 @@
-﻿using Application.Core.ProfileModule.AddressAggregate;
-using Application.Core.ProfileModule.PhoneAggregate;
-using Application.Core.ProfileModule.ProfileAddressAggregate;
-using Application.Core.ProfileModule.ProfileAggregate;
-using Application.Core.ProfileModule.ProfilePhoneAggregate;
+﻿using Application.Domain.ProfileModule.AddressAggregate;
+using Application.Domain.ProfileModule.PhoneAggregate;
+using Application.Domain.ProfileModule.ProfileAddressAggregate;
+using Application.Domain.ProfileModule.ProfileAggregate;
+using Application.Domain.ProfileModule.ProfilePhoneAggregate;
 using Application.DAL.Contract;
 using Application.DAL.EntityConfiguration;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using Application.Common;
 
 namespace Application.DAL
 {
@@ -117,26 +118,26 @@ namespace Application.DAL
         #region IQueryableUnitOfWork Members
 
         public DbSet<T> CreateSet<T>()
-            where T : class
+            where T : Entity
         {
             return base.Set<T>();
         }
 
         public void Attach<T>(T item)
-            where T : class
+            where T : Entity
         {
             //attach and set as unchanged
             base.Entry<T>(item).State = System.Data.EntityState.Unchanged;
         }
 
         public void SetModified<T>(T item)
-            where T : class
+            where T : Entity
         {
             //this operation also attach item in object state manager
             base.Entry<T>(item).State = System.Data.EntityState.Modified;
         }
         public void ApplyCurrentValues<T>(T original, T current)
-            where T : class
+            where T : Entity
         {
             //if it is not attached, attach original and set current values
             base.Entry<T>(original).CurrentValues.SetValues(current);

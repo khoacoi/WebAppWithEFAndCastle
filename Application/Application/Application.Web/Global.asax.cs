@@ -1,5 +1,8 @@
-﻿using Application.Web.Dependency;
+﻿using Application.DependencyResolver.DependencyInstallers;
+using Application.DependencyResolver.Factory;
 using Castle.Windsor;
+using CommonServiceLocator.WindsorAdapter;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +23,10 @@ namespace Application.Web
 
         public MvcApplication()
         {
-            this.container =
-                new WindsorContainer().Install(new DependencyConventions());
+            this.container = new WindsorContainer();
+            this.container.Install(new DependencyConventions());
+            //this.container.Install(new WebDependencyConventions());
+            ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(this.container));
         }
 
         public override void Dispose()

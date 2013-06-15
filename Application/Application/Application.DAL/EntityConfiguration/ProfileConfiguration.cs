@@ -1,4 +1,4 @@
-﻿using Application.Core.ProfileModule.ProfileAggregate;
+﻿using Application.Domain.ProfileModule.ProfileAggregate;
 using System.Data.Entity.ModelConfiguration;
 
 namespace Application.DAL.EntityConfiguration

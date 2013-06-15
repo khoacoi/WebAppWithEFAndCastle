@@ -9,13 +9,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Application.Manager</RootNamespace>
     <AssemblyName>Application.Manager</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -58,24 +61,19 @@
     <Compile Include="Conversion\Mapping.cs" />
     <Compile Include="Implementation\ContactManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Messages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Messages.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Common\Application.Common.csproj">
       <Project>{675c4e4d-10ff-4b18-98e3-5e2e06d6fcc0}</Project>
       <Name>Application.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Application.Core\Application.Core.csproj">
-      <Project>{b96f9030-d448-402c-9f68-883887bf3a24}</Project>
-      <Name>Application.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Application.DAL\Application.DAL.csproj">
       <Project>{4458a58c-2928-402c-835b-7503b97a50d0}</Project>
       <Name>Application.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Domain\Application.Domain.csproj">
+      <Project>{b96f9030-d448-402c-9f68-883887bf3a24}</Project>
+      <Name>Application.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Application.DTO\Application.DTO.csproj">
       <Project>{b077cad7-6121-4fb2-a2a4-7a19333fd652}</Project>
@@ -85,16 +83,14 @@
       <Project>{1921170f-7617-4c72-9be9-5593023d2d19}</Project>
       <Name>Application.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Application.Resources\Application.Resources.csproj">
+      <Project>{cd974bb9-5db7-4f5c-ad7d-04cdcfa2fda4}</Project>
+      <Name>Application.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Messages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

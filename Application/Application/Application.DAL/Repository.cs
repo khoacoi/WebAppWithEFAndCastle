@@ -1,6 +1,6 @@
 ﻿using Application.Common.Logging;
-using Application.Core;
-using Application.Core.Specification.Contract;
+using Application.Domain;
+using Application.Domain.Specification.Contract;
 using Application.DAL.Contract;
 using Application.DAL.Resources;
 using System;
@@ -8,11 +8,12 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
+using Application.Common;
 
 namespace Application.DAL
 {
     public class Repository<T> : IRepository<T>
-        where T : class
+        where T : Entity
     {
         #region Members
 

@@ -4,8 +4,7 @@ namespace Application.Common.Validator
     /// <summary>
     /// Data Annotations based entity validator factory
     /// </summary>
-    public class DataAnnotationsEntityValidatorFactory
-        : IEntityValidatorFactory
+    public class DataAnnotationsEntityValidatorFactory : IEntityValidatorFactory
     {
         /// <summary>
         /// Create a entity validator

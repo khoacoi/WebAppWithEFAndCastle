@@ -1,21 +1,22 @@
 ﻿using Application.Common.Logging;
 using Application.DTO;
 using Application.Manager.Contract;
-using Application.Manager.Resources;
 using Application.Repository.ProfileModule;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Application.Manager.Conversion;
-using Application.Core.ProfileModule.ProfileAggregate;
+using Application.Domain.ProfileModule.ProfileAggregate;
 using Application.Common.Validator;
 using Application.Common;
-using Application.Core.ProfileModule.AddressAggregate;
-using Application.Core.ProfileModule.PhoneAggregate;
-using Application.Core.ProfileModule.ProfileAddressAggregate;
-using Application.Core.ProfileModule.ProfilePhoneAggregate;
+using Application.Domain.ProfileModule.AddressAggregate;
+using Application.Domain.ProfileModule.PhoneAggregate;
+using Application.Domain.ProfileModule.ProfileAddressAggregate;
+using Application.Domain.ProfileModule.ProfilePhoneAggregate;
 using Application.DTO.ProfileModule;
+using Application.Common.Localization;
+using Application.Resources;
 
 namespace Application.Manager.Implementation
 {
@@ -23,25 +24,21 @@ namespace Application.Manager.Implementation
     {
         #region Global Declearation
 
-        AddressRepository _addressRepository;
-        AddressTypeRepository _addressTypeRepository;
-        PhoneRepository _phoneRepository;
-        PhoneTypeRepository _phoneTypeRepository;
-        ProfileAddressRepository _profileAddressRepository;
-        ProfilePhoneRepository _profilePhoneRepository;
-        ProfileRepository _profileRepository;
+        IAddressRepository _addressRepository;
+        IAddressTypeRepository _addressTypeRepository;
+        IPhoneRepository _phoneRepository;
+        IPhoneTypeRepository _phoneTypeRepository;
+        IProfileAddressRepository _profileAddressRepository;
+        IProfilePhoneRepository _profilePhoneRepository;
+        IProfileRepository _profileRepository;
 
         #endregion Global Declearation
 
         #region Constructor
 
-        public ContactManager(AddressRepository addressRepository,
-                              AddressTypeRepository addressTypeRepository,
-                              PhoneRepository phoneRepository,
-                              PhoneTypeRepository phoneTypeRepository,
-                              ProfileAddressRepository profileAddressRepository,
-                              ProfilePhoneRepository profilePhoneRepository,
-                              ProfileRepository profileRepository)
+        public ContactManager(IAddressRepository addressRepository, IAddressTypeRepository addressTypeRepository, IPhoneRepository phoneRepository,
+                              IPhoneTypeRepository phoneTypeRepository,IProfileAddressRepository profileAddressRepository, IProfilePhoneRepository profilePhoneRepository,
+                              IProfileRepository profileRepository)
         {
             if (addressRepository == null)
                 throw new ArgumentNullException("addressRepository");
@@ -86,7 +83,7 @@ namespace Application.Manager.Implementation
         public List<ProfileDTO> FindProfiles(int pageIndex, int pageCount)
         {
             if (pageIndex < 0 || pageCount <= 0)
-                throw new ArgumentException(Messages.warning_InvalidArgumentForFindProfiles);
+                throw new AggregateException(Locale.GetString("warning_InvalidArgumentForFindProfiles", typeof(Application.Resources.ApplicationErrors)));
 
             //recover profiles in paged fashion
             var profiles = _profileRepository.GetPaged<DateTime>(pageIndex, pageCount, o => o.Created, false).ToList();
@@ -136,7 +133,7 @@ namespace Application.Manager.Implementation
                 _profileRepository.UnitOfWork.Commit();
             }
             else //the customer not exist, cannot remove
-                LoggerFactory.CreateLog().LogWarning(Messages.warning_CannotRemoveNonExistingProfile);
+                LoggerFactory.CreateLog().LogWarning(Locale.GetString("warning_CannotRemoveNonExistingProfile", typeof(ApplicationErrors)));
         }
 
         /// <summary>
@@ -186,7 +183,7 @@ namespace Application.Manager.Implementation
         {
             //if profileDTO data is not valid
             if (profileDTO == null)
-                throw new ArgumentException(Messages.warning_CannotAddProfileWithNullInformation);
+                throw new ArgumentException(Locale.GetString("warning_CannotAddProfileWithNullInformation", typeof(ApplicationErrors)));
 
             //Create a new profile entity
             var newProfile = ProfileFactory.CreateProfile(profileDTO.FirstName, profileDTO.LastName, profileDTO.Email, "Anand", DateTime.Now, "Anand", DateTime.Now);
@@ -222,7 +219,7 @@ namespace Application.Manager.Implementation
         {
             //if profileDTO data is not valid
             if (profileDTO == null)
-                throw new ArgumentException(Messages.warning_CannotAddProfileWithNullInformation);
+                throw new ArgumentException(Locale.GetString("warning_CannotAddProfileWithNullInformation", typeof(ApplicationErrors)));
 
             //Create a new profile entity
             var currentProfile = _profileRepository.Get(id);
@@ -263,7 +260,7 @@ namespace Application.Manager.Implementation
         {
             //if addressDTO data is not valid
             if (addressDTO == null)
-                throw new ArgumentException(Messages.warning_CannotAddProfileWithNullInformation);
+                throw new ArgumentException(Locale.GetString("warning_CannotAddProfileWithNullInformation", typeof(ApplicationErrors)));
 
             //Create a new Address entity
             var newAddress = AddressFactory.CreateAddress(addressDTO.AddressLine1, addressDTO.AddressLine2, addressDTO.City, addressDTO.State, addressDTO.Country,
@@ -432,7 +429,7 @@ namespace Application.Manager.Implementation
                 _addressRepository.UnitOfWork.Commit();
             }
             else //the customer not exist, cannot remove
-                LoggerFactory.CreateLog().LogWarning(Messages.warning_CannotRemoveNonExistingProfile);
+                LoggerFactory.CreateLog().LogWarning(Locale.GetString("warning_CannotRemoveNonExistingProfile", typeof(ApplicationErrors)));
         }
 
         /// <summary>
@@ -444,7 +441,7 @@ namespace Application.Manager.Implementation
         {
             //if phoneDTO data is not valid
             if (phoneDTO == null)
-                throw new ArgumentException(Messages.warning_CannotAddProfileWithNullInformation);
+                throw new ArgumentException(Locale.GetString("warning_CannotAddProfileWithNullInformation", typeof(ApplicationErrors)));
 
             //Create a new Phone entity
             var newPhone = PhoneFactory.CreatePhone(phoneDTO.Number, "Anand", DateTime.Now, "Anand", DateTime.Now);
@@ -610,7 +607,7 @@ namespace Application.Manager.Implementation
                 _phoneRepository.UnitOfWork.Commit();
             }
             else //the customer not exist, cannot remove
-                LoggerFactory.CreateLog().LogWarning(Messages.warning_CannotRemoveNonExistingProfile);
+                LoggerFactory.CreateLog().LogWarning(Locale.GetString("warning_CannotRemoveNonExistingProfile", typeof(ApplicationErrors)));
         }
 
         /// <summary>
